@@ -1,0 +1,14 @@
+.country {
+    margin: 1px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.countryButton {
+    width: auto;
+}
+

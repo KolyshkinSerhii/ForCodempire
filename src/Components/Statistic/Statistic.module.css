@@ -1,0 +1,16 @@
+.statistic {
+    width: 750px;
+    margin: 0 auto;
+}
+
+.countries {
+    width: 750px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    
+}
