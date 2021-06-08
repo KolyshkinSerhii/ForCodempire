@@ -4,6 +4,7 @@ import { getCountries } from "../../Redux/Selectors"
 import { requestCountries } from "../../Redux/Statistic"
 import { Country } from "./Country"
 import s from './Statistic.module.css'
+import CovidLogo from "./..//..//images/covid-logo.png"
 
 
 export const Statistic: React.FC = React.memo(() => {
@@ -26,25 +27,33 @@ export const Statistic: React.FC = React.memo(() => {
     const filteredCountries = useMemo(() => {
         if (!searchString) {
             return countries;
-        }   
+        }
         return countries.filter((c): any => c.Country.includes(searchString));
     }, [searchString, countries]);
 
     return (
         <div className={s.statistic}>
-            <div>
-                <div>COVID-19 STATISTIC</div>
-                <input type="text" placeholder="Search" onChange={handleChange}></input>
-            </div>
             <div className={s.header}>
-                <div>Countries</div>
-                <div>Total deaths</div>
+                <div className={s.wrapper}>
+                    <img className={s.logo} src={CovidLogo} alt="" />
+                    <div className={s.stat}>STATISTIC</div>
+                </div>
+                <div>
+                    <input className={s.search} type="text" placeholder="Search..." onChange={handleChange}></input>
+                </div>
             </div>
-            <div className={s.countries}>
-                {filteredCountries.map(c => <Country
-                    key={c.ID}
-                    Country={c} />)}
+            <div className={s.list}>
+                <div>№</div>
+                <div className={s.list_country} >Country</div>
+                <div className={s.list_total}>Total confirmed</div>
             </div>
+            <ol className={s.countries}>
+                {filteredCountries.map(c =>
+                    <li key={c.ID}>
+                        <Country
+                            Country={c} />
+                    </li>)}
+            </ol>
         </div>
     )
 })

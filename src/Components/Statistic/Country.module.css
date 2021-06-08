@@ -1,14 +1,28 @@
 .country {
-    margin: 1px;
     padding: 5px;
-    border: 1px solid black;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 4fr 1.5fr;
+    align-items: left;
     justify-content: space-between;
+    border-left: 1px solid #b2b2b2;
 }
 
-.countryButton {
-    width: auto;
+/* .country_bottom {
+    background-color: #fff;
+} */
+
+.total {
+    text-align: left;
+}
+
+button {
+    border: none;
+    background-color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+}
+img {
+    width: 20px;
 }
 

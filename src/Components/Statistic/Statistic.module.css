@@ -1,16 +1,73 @@
 .statistic {
-    width: 750px;
+    font-weight: bold;
+    width: 1000px;
     margin: 0 auto;
-}
-
-.countries {
-    width: 750px;
-    margin: 0 auto;
-    box-sizing: border-box;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
-    
+    align-items: center;
 }
+
+.wrapper {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+}
+
+.logo {
+    width: 200px;
+}
+.stat {
+    font-size: 40px;
+}
+.search{
+    font-size: 36px;
+    border-radius: 10px;
+}
+
+.list {
+    color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 0.5fr 5fr 2fr;
+    padding: 10px;
+    border: 1px solid #2196F3;
+    border-radius: 10px;
+    background-color: #2196F3;
+    text-align: left;
+}
+
+.countries {
+    margin-left: 0;
+    list-style: none;
+    counter-reset: li;
+  }
+  .countries li {
+    padding: 5px 0;
+    position: relative;
+    left: 0;
+    margin-bottom: 0.75em;
+    padding-left: 1em;
+    border-bottom: 1px solid #B2B2B2;
+    border-right: 1px solid #B2B2B2;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .countries li:before {
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40px;
+    width: 40px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    border-left: 1px solid #B2B2B2;
+    border-bottom: 1px solid #B2B2B2;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    counter-increment: li;
+    content: counter(li);
+  }
