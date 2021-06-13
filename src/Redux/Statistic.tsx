@@ -1,7 +1,16 @@
 import { ThunkAction } from 'redux-thunk';
-import { Countries } from '../API/API';
+import { Summary } from '../API/API';
 import { AppStateType, InferActionsType } from './Store';
 
+
+export type GlobalType = {
+    NewConfirmed: number
+    NewDeaths: number
+    NewRecovered: number
+    TotalConfirmed: number
+    TotalDeaths: number
+    TotalRecovered: number
+}
 
 export type CountryType = {
     ID: string
@@ -9,23 +18,31 @@ export type CountryType = {
     TotalConfirmed: number
     TotalDeaths: number
     TotalRecovered: number
+    NewConfirmed: number
+    NewDeaths: number
+    NewRecovered: number
 }
 
 const initialState = {
     countries: [] as Array<CountryType>,
+    global: {} as GlobalType
 }
 
 export type InitialStateType = typeof initialState
 
-const statisticReducer = (state = initialState, action: any) : InitialStateType => {
-    switch(action.type) {
-        
+const statisticReducer = (state = initialState, action: any): InitialStateType => {
+    switch (action.type) {
+
         case 'SET-COUNTRIES':
             return {
                 ...state, countries: action.payload
             };
-            default: 
-                return state
+        case 'SET-GLOBAL':
+            return {
+                ...state, global: action.payload
+            };
+        default:
+            return state
     }
 }
 
@@ -36,12 +53,24 @@ export const actions = {
         type: 'SET-COUNTRIES',
         payload: countries
     } as const),
+    setGlobalAC: (global: GlobalType) => ({
+        type: 'SET-GLOBAL',
+        payload: global
+    })
 }
 
-export const requestCountries = (): ThunkAction<Promise<void>,AppStateType, unknown, ActionTypes> => async (dispatch) => {
-    let data = await Countries.getCountries()
+export const requestCountries = (): ThunkAction<Promise<void>, AppStateType, unknown, ActionTypes> => async (dispatch) => {
+    let data = await Summary.getSummary()
 
     dispatch(actions.setCountriesAC(data.Countries))
 }
+
+export const requestGlobalStat = (): ThunkAction<Promise<void>, AppStateType, unknown, ActionTypes> => async (dispatch) => {
+    let data = await Summary.getSummary()
+
+    dispatch(actions.setGlobalAC(data.Global))
+}
+
+
 
 export default statisticReducer

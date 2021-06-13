@@ -5,6 +5,7 @@ import { requestCountries } from "../../Redux/Statistic"
 import { Country } from "./Country"
 import s from './Statistic.module.css'
 import CovidLogo from "./..//..//images/covid-logo.png"
+import { GlobalDashboard } from "./GlobalDash/GlobalDashboard"
 
 
 export const Statistic: React.FC = React.memo(() => {
@@ -42,6 +43,7 @@ export const Statistic: React.FC = React.memo(() => {
                     <input className={s.search} type="text" placeholder="Search..." onChange={handleChange}></input>
                 </div>
             </div>
+            <GlobalDashboard />
             <div className={s.list}>
                 <div>№</div>
                 <div className={s.list_country} >Country</div>

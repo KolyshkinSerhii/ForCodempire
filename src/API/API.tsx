@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { CountryType } from '../Redux/Statistic';
+import { CountryType, GlobalType } from '../Redux/Statistic';
 
 
 export const instance = Axios.create({
@@ -11,15 +11,19 @@ export const instance = Axios.create({
 
 //TYPES
 
+type GlobalStatType = {
+    Global: GlobalType
+}
+
 type CountriesType = {
     Countries: Array<CountryType>
 }
 
 // API for Countries
 
-export const Countries = {
-    getCountries() {
-        return instance.get<CountriesType>(`/summary`).then(res => {
+export const Summary = {
+    getSummary() {
+        return instance.get<CountriesType & GlobalStatType>(`/summary`).then(res => {
             return res.data
         })
     },

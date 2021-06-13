@@ -1,0 +1,18 @@
+.Global_title {
+    font-size: 36px;
+}
+
+.Global_grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr;
+    margin-bottom: 30px;
+}
+.wrapper {
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.countries_count {
+    font-size: 48px;
+}
