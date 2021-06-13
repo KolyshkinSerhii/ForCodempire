@@ -16,36 +16,36 @@ export const GlobalDashboard: React.FC = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className={s.Global_dashboard} >
             <div className={s.Global_title}>Global dashboard</div>
             <div className={s.Global_grid}>
                 <div className={s.wrapper}>
-                    <div className={s.countries_count}>191</div>
-                    <div>Countries with cases</div>
+                    <div className={s.count}>191</div>
+                    <div className={s.wrapper_text}>Countries with cases</div>
                 </div>
 
                 <div className={s.wrapper}>
-                    <div>Confirmed Cases</div>
-                    <div><div>{globalStat.TotalConfirmed}</div></div>
+                    <div className={s.wrapper_text} >Confirmed Cases</div>
+                    <div className={s.count}>{globalStat.TotalConfirmed}</div>
                     <div>
-                        <div>{globalStat.NewConfirmed}</div>
-                        <div>new cases</div>
+                        <div className={s.count_newStat}>{globalStat.NewConfirmed}</div>
+                        <div className={s.wrapper_text}>new cases</div>
                     </div>
                 </div >
                 <div className={s.wrapper}>
-                    <div>Confirmed deaths</div>
-                    <div><div>{globalStat.TotalDeaths}</div></div>
+                    <div className={s.wrapper_text}>Confirmed deaths</div>
+                    <div className={s.count}>{globalStat.TotalDeaths}</div>
                     <div>
-                        <div>{globalStat.NewDeaths}</div>
-                        <div>new deaths</div>
+                        <div className={s.count_newStat}>{globalStat.NewDeaths}</div>
+                        <div className={s.wrapper_text}>new deaths</div>
                     </div>
                 </div>
                 <div className={s.wrapper}>
-                    <div>Confirmed recovered</div>
-                    <div><div>{globalStat.TotalRecovered}</div></div>
+                    <div className={s.wrapper_text}>Confirmed recovered</div>
+                    <div className={s.count}>{globalStat.TotalRecovered}</div>
                     <div>
-                        <div>{globalStat.NewRecovered}</div>
-                        <div>new recovered</div>
+                        <div className={s.count_newStat}>{globalStat.NewRecovered}</div>
+                        <div className={s.wrapper_text}>new recovered</div>
                     </div>
                 </div>
             </div>
