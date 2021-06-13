@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ForPortfolio/static/css/main.69743a8e.chunk.css",
+    "main.css": "/ForPortfolio/static/css/main.0d3109d1.chunk.css",
     "main.js": "/ForPortfolio/static/js/main.b2fb649a.chunk.js",
     "main.js.map": "/ForPortfolio/static/js/main.b2fb649a.chunk.js.map",
     "runtime-main.js": "/ForPortfolio/static/js/runtime-main.548c85af.js",
@@ -10,14 +10,14 @@
     "static/js/3.240c53b6.chunk.js": "/ForPortfolio/static/js/3.240c53b6.chunk.js",
     "static/js/3.240c53b6.chunk.js.map": "/ForPortfolio/static/js/3.240c53b6.chunk.js.map",
     "index.html": "/ForPortfolio/index.html",
-    "static/css/main.69743a8e.chunk.css.map": "/ForPortfolio/static/css/main.69743a8e.chunk.css.map",
+    "static/css/main.0d3109d1.chunk.css.map": "/ForPortfolio/static/css/main.0d3109d1.chunk.css.map",
     "static/js/2.54f8a3fa.chunk.js.LICENSE.txt": "/ForPortfolio/static/js/2.54f8a3fa.chunk.js.LICENSE.txt",
     "static/media/covid-logo.db6bacd1.png": "/ForPortfolio/static/media/covid-logo.db6bacd1.png"
   },
   "entrypoints": [
     "static/js/runtime-main.548c85af.js",
     "static/js/2.54f8a3fa.chunk.js",
-    "static/css/main.69743a8e.chunk.css",
+    "static/css/main.0d3109d1.chunk.css",
     "static/js/main.b2fb649a.chunk.js"
   ]
 }
